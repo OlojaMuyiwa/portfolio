@@ -1,8 +1,12 @@
-import 
+import React from "react";
+import Home from './Home';
+
 function App() {
   return (
-    
+    <>
+    <Home />
+    </>
   );
 }
 
-export defaul
+export default App;
