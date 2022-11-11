@@ -25,10 +25,10 @@ const Sidebar = ( { closeSidebar, isSidebarOpen} ) => {
       </ul>
       <ul className='social-link'>
         { social.map((item) => {
-          const { id, icon } = item;
+          const { id, icon, url } = item;
 
           return <li key={id}>
-             <a href="/">
+             <a href={ url }>
               { icon }
              </a>
           </li>
