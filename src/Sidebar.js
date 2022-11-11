@@ -2,14 +2,14 @@ import React from 'react';
 import { links, social} from './data';
 import { FaTimes } from 'react-icons/fa'
 
-const Sidebar = ( { openSidebar, closeSidebar} ) => {
-  // console.log(openSidebar, closeSidebar);
+const Sidebar = ( { closeSidebar, isSidebarOpen} ) => {
+
   return (
-   <aside className='sidebar'>
+   <aside className={`${isSidebarOpen ?'sidebar-show' : 'sidebar'}`}>
     <div className='logo-container'>
       <h2 className='logo'>Oloja</h2>
       <button className='btn close-btn'>
-        <FaTimes />
+        <FaTimes onClick={closeSidebar}/>
       </button>
      </div>
       <ul className='links'>
@@ -25,7 +25,7 @@ const Sidebar = ( { openSidebar, closeSidebar} ) => {
       </ul>
       <ul className='social-link'>
         { social.map((item) => {
-          const { id, url, icon } = item;
+          const { id, icon } = item;
 
           return <li key={id}>
              <a href="/">
